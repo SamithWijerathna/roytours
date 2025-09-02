@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { Urbanist } from "next/font/google";
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Roytours",
@@ -14,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className={`antialiased ${urbanist.className}`}>{children}</body>
     </html>
   );
 }
