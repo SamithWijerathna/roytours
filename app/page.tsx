@@ -6,7 +6,7 @@ export default function Home() {
     <div className="text-[#1e1e1e]">
       <section>
         <Header></Header>
-        <div className="relative rounded-2xl h-[85dvh] mx-4 mb-4 flex items-center justify-center lg:justify-around text-center overflow-hidden p-2">
+        <div className="relative rounded-2xl h-[85dvh] mx-4 mb-4 flex items-center justify-center lg:justify-start text-center overflow-hidden p-2">
           <video
             autoPlay
             loop
@@ -22,12 +22,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40 -z-10" />
 
           {/* Content */}
-          <div className="max-w-xl text-white flex flex-col items-center lg:items-start lg:text-left lg:pl-4">
+          <div className="max-w-xl text-white flex flex-col items-center lg:items-start lg:text-left lg:p-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Experience the <br />
               Magic of Sri Lanka
             </h1>
-            <div className="flex flex-col items-center lg:flex-row lg:gap-4 lg:w-full">
+            <div className="lg:absolute flex flex-col items-center lg:flex-row lg:pr-8 lg:justify-between lg:w-full bottom-2 ">
               <button className="bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl">
                 <div className="pl-4 py-2">Start Your Adventure </div>
                 <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#ffffff]">
@@ -48,7 +48,7 @@ export default function Home() {
                   </svg>
                 </div>
               </button>
-              <p className="absolute lg:relative bottom-2  text-base md:text-xl leading-relaxed">
+              <p className="absolute lg:relative bottom-2 lg:w-1/2 text-base md:text-xl leading-relaxed">
                 From misty mountains to golden beaches, from cultural treasures
                 to warm smiles, discover Sri Lanka like never before with a
                 guide who knows its heart.
@@ -58,49 +58,61 @@ export default function Home() {
         </div>
       </section>
       <section className="relative flex p-4 bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
-        <div className="z-10 flex flex-col items-center text-center">
-          <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
-            {" "}
-            Our Story{" "}
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Guided by Pride, Crafted with Care
-          </h1>
-          <img src="/image/roy.png" alt="Mr Roy Kumara" />
-          <p className="mt-6 text-base  md:text-xl">
-            With over a decade of experience, we’ve dedicated ourselves to
-            crafting unforgettable journeys across Sri Lanka. From the misty
-            hills of the highlands to the golden southern shores, we’ve guided
-            travelers through stories of heritage, beauty, and discovery.
-          </p>
-          <button className="bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold">
-            <div className="pl-4 py-2">See More </div>
-            <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#1e1e1e]">
-              <svg
-                width="18"
-                height="17"
-                viewBox="0 0 18 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+        <div className="z-10 flex flex-col lg:flex-row items-center lg:items-baseline-last text-center">
+          <img
+            src="/image/roy.png"
+            alt="Mr Roy Kumara"
+            className="hidden lg:inline h-[500px] mr-4 "
+          />
+          <div className="flex flex-col items-center lg:items-start lg:text-left text-center ">
+            <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
+              {" "}
+              Our Story{" "}
             </div>
-          </button>
-          <div className="mt-12 mb-8 flex flex-row gap-8">
-            <div>
-              <p className="text-7xl font-bold">10+</p>
-              <p className="text-base md:text-xl">Years of experience</p>
-            </div>
-            <div>
-              <p className="text-7xl font-semibold">100+</p>
-              <p className="text-base md:text-xl">Happy Explorers</p>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-6 lg:mb-2">
+              Guided by Pride, <br className="hidden lg:inline" /> Crafted with
+              Care
+            </h1>
+            <img
+              src="/image/roy.png"
+              alt="Mr Roy Kumara"
+              className="lg:hidden"
+            />
+            <p className="mt-6 text-base  md:text-xl">
+              With over a decade of experience, we’ve dedicated ourselves to
+              crafting unforgettable journeys across Sri Lanka. From the misty
+              hills of the highlands to the golden southern shores, we’ve guided
+              travelers through stories of heritage, beautxy, and discovery.
+            </p>
+            <button className="bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold">
+              <div className="pl-4 py-2">Read More </div>
+              <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#1e1e1e]">
+                <svg
+                  width="18"
+                  height="17"
+                  viewBox="0 0 18 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div className="mt-12 mb-8 flex flex-row gap-8">
+              <div>
+                <p className="text-7xl font-bold">10+</p>
+                <p className="text-base md:text-xl">Years of experience</p>
+              </div>
+              <div>
+                <p className="text-7xl font-semibold">100+</p>
+                <p className="text-base md:text-xl">Happy Explorers</p>
+              </div>
             </div>
           </div>
         </div>
@@ -109,15 +121,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
 
-      <section className="p-4 flex flex-col items-center text-center">
+      <section className="p-4 flex flex-col items-center lg:items-start lg:text-left text-center">
         <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
           {" "}
           Experiences{" "}
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-2">
           A Journey Shaped by Pride and Passion
         </h1>
-        <p className="text-base md:text-xl">
+        <p className="text-base lg:w-[75%] md:text-xl">
           Every tour is designed to celebrate Sri Lanka’s essence — its culture,
           landscapes, and people. From ancient temples to hidden waterfalls,
           every step of your journey is carefully curated with pride and genuine
@@ -128,8 +140,8 @@ export default function Home() {
             <Image
               src="/image/train.png"
               alt="Experiences"
-              width={1200}
-              height={1200}
+              width={600}
+              height={600}
               className="rounded-2xl"
             />
           </div>
@@ -161,7 +173,7 @@ export default function Home() {
           {" "}
           Destinations{" "}
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-2">
           A Glimpse of Beauty and Diversity
         </h1>
         <p className="text-base md:text-xl mb-6">
@@ -268,12 +280,12 @@ export default function Home() {
           {" "}
           Testimonials{" "}
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-2">
           Memories Shared by Travelers Before You
         </h1>
         <p className="text-base md:text-xl mb-6">
-          Don’t just take our word for it. Here’s what fellow travelers have to
-          say about their journeys through Sri Lanka:
+          Don’t just take our word for it. <br /> Here’s what fellow travelers
+          have to say about their journeys through Sri Lanka:
         </p>
         <div className="flex flex-row gap-6">
           <div className="w-2/3 h-80 rounded-md shadow-md bg-white flex flex-col text-left p-4">
@@ -298,7 +310,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative flex p-4 bg-[url(/image/contactImg.png)] bg-cover bg-bottom bg-no-repeat h-[50dvh]">
+      <section className="relative flex p-4 bg-[url(/image/contactImg.png)] bg-cover bg-bottom bg-no-repeat h-[50dvh] overflow-hidden">
         <div className="z-10 flex flex-col items-center text-center justify-center">
           <p className="text-5xl font-semibold text-white ">
             Are you ready for your next adventure?
