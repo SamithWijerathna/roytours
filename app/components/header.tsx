@@ -47,7 +47,7 @@ export default function Header() {
               />
             </svg>
           </div>
-          <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+          <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </button>
         <div className="md:hidden flex items-center justify-center p-2">
           <svg

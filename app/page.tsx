@@ -51,7 +51,7 @@ export default function Home() {
                   </svg>
                 </div>
                 {/* Sliding background */}
-                <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 rounded-full bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               </button>
               <p className="absolute lg:relative bottom-2 lg:w-1/2 text-base md:text-xl leading-relaxed">
                 From misty mountains to golden beaches, from cultural treasures
@@ -110,7 +110,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
             </button>
             <div className="mt-12 mb-8 flex flex-row gap-8">
               <div>
@@ -154,7 +154,7 @@ export default function Home() {
             />
           </div>
         </div>
-  <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+        <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
           <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
             See More{" "}
           </div>
@@ -175,7 +175,7 @@ export default function Home() {
               />
             </svg>
           </div>
-          <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+          <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </button>
       </section>
 
@@ -347,7 +347,7 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <span className="absolute inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+            <span className="absolute rounded-full inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
           </button>
         </div>
         {/* Overlay with gradient */}
