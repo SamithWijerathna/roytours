@@ -62,20 +62,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative flex p-4 bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
-        <div className="z-10 flex flex-col lg:flex-row items-center lg:items-baseline-last text-center">
+      <section className="relative flex relative px-10 w-full h-screen bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+        <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
             alt="Mr Roy Kumara"
-            className="hidden lg:inline h-[500px] mr-4 "
+            className="hidden lg:block h-auto w-1/2 px-10"
           />
-          <div className="flex flex-col items-center lg:items-start lg:text-left text-center ">
+          <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center w-1/2 h-full">
             <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
               {" "}
               Our Story{" "}
             </div>
             <h1 className="text-4xl md:text-5xl font-semibold mb-6 lg:mb-2">
-              Guided by Pride, <br className="hidden lg:inline" /> Crafted with
+              Guided by Pride, <br className="hidden" /> Crafted with
               Care
             </h1>
             <img
@@ -83,7 +83,7 @@ export default function Home() {
               alt="Mr Roy Kumara"
               className="lg:hidden"
             />
-            <p className="mt-6 text-base  md:text-xl">
+            <p className="mt-6 text-base md:text-xl text-justify">
               With over a decade of experience, we’ve dedicated ourselves to
               crafting unforgettable journeys across Sri Lanka. From the misty
               hills of the highlands to the golden southern shores, we’ve guided
