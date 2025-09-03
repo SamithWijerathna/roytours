@@ -28,9 +28,12 @@ export default function Home() {
               Magic of Sri Lanka
             </h1>
             <div className="lg:absolute flex flex-col items-center lg:flex-row lg:pr-8 lg:justify-between lg:w-full bottom-2 ">
-              <button className="bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl">
-                <div className="pl-4 py-2">Start Your Adventure </div>
-                <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#ffffff]">
+              <button className="relative bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+                <div className="pl-4 py-2 relative z-10 group-hover:text-black transition-colors duration-300">
+                  Start Your Adventure{" "}
+                </div>
+
+                <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff]">
                   <svg
                     width="14"
                     height="13"
@@ -47,6 +50,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
+                {/* Sliding background */}
+                <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               </button>
               <p className="absolute lg:relative bottom-2 lg:w-1/2 text-base md:text-xl leading-relaxed">
                 From misty mountains to golden beaches, from cultural treasures
@@ -84,9 +89,11 @@ export default function Home() {
               hills of the highlands to the golden southern shores, we’ve guided
               travelers through stories of heritage, beautxy, and discovery.
             </p>
-            <button className="bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold">
-              <div className="pl-4 py-2">Read More </div>
-              <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#1e1e1e]">
+            <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+              <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+                Read More{" "}
+              </div>
+              <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
                 <svg
                   width="18"
                   height="17"
@@ -103,6 +110,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
+              <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
             </button>
             <div className="mt-12 mb-8 flex flex-row gap-8">
               <div>
@@ -146,9 +154,11 @@ export default function Home() {
             />
           </div>
         </div>
-        <button className="bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold">
-          <div className="pl-4 py-2">See More </div>
-          <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#1e1e1e]">
+  <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+          <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+            See More{" "}
+          </div>
+          <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
             <svg
               width="18"
               height="17"
@@ -165,6 +175,7 @@ export default function Home() {
               />
             </svg>
           </div>
+          <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </button>
       </section>
 
@@ -315,9 +326,11 @@ export default function Home() {
           <p className="text-5xl font-semibold text-white ">
             Are you ready for your next adventure?
           </p>
-          <button className="bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold">
-            <div className="pl-4 py-2 text-white">Let's Go </div>
-            <div className="w-full h-full p-4 items-center justify-center rounded-full bg-[#ffffff]">
+          <button className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+            <div className="pl-4 py-2 text-white relative z-10 group-hover:text-[#1e1e1e] transition-colors duration-300">
+              Let's Go{" "}
+            </div>
+            <div className="w-full h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff] z-10">
               <svg
                 width="18"
                 height="17"
@@ -334,6 +347,7 @@ export default function Home() {
                 />
               </svg>
             </div>
+            <span className="absolute inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
           </button>
         </div>
         {/* Overlay with gradient */}
@@ -374,9 +388,10 @@ export default function Home() {
             className="w-[199px] mt-6 mb-4"
           />
         </div>
-        <div className="border-t-1 w-full text-sm flex flex-col text-center items-center gap-2 pt-4">
+        <div className="border-t-1 w-full text-sm flex flex-col lg:flex-row lg:justify-center text-center items-center gap-2 pt-4">
           <p>
-            All Rights Reserved By Roy Tours. <span className="hidden">|</span>
+            All Rights Reserved By Roy Tours.{" "}
+            <span className="hidden lg:inline">|</span>
           </p>
           <span className="flex items-center gap-2">
             Developed By
