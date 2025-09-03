@@ -27,9 +27,11 @@ export default function Header() {
             <Link href="/contact">Gallery</Link>
           </li>
         </ul>
-        <button className="hidden bg-transparent text-[#1e1e1e] border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold">
-          <div className="pl-4 py-2">Let’s travel </div>
-          <div className="w-full h-full p-2 items-center justify-center rounded-full bg-[#1e1e1e]">
+        <button className="relative bg-transparent text-[#1e1e1e] border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+          <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+            Let’s travel{" "}
+          </div>
+          <div className="w-full h-full p-2 items-center justify-center rounded-full bg-[#1e1e1e] group-hover:scale-105 z-10">
             <svg
               width="25px"
               height="25px"
@@ -45,6 +47,7 @@ export default function Header() {
               />
             </svg>
           </div>
+          <span className="absolute inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </button>
         <div className="md:hidden flex items-center justify-center p-2">
           <svg
