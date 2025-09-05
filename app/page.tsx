@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative flex relative px-10 w-full h-screen bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+      <section className="relative flex px-10 w-full h-screen bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -75,8 +75,7 @@ export default function Home() {
               Our Story{" "}
             </div>
             <h1 className="text-4xl md:text-5xl font-semibold mb-6 lg:mb-2">
-              Guided by Pride, <br className="hidden" /> Crafted with
-              Care
+              Guided by Pride, <br className="hidden" /> Crafted with Care
             </h1>
             <img
               src="/image/roy.png"
