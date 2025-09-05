@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/header";
+import Testimonials from "./components/testimonials";
 export default function Home() {
   return (
     <div className="text-[#1e1e1e]">
@@ -286,39 +287,7 @@ export default function Home() {
         </div>
       </section>
       <section className="p-4 flex flex-col items-center text-center">
-        <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm mb-2">
-          {" "}
-          Testimonials{" "}
-        </div>
-        <h1 className="text-4xl md:text-5xl font-semibold mb-2">
-          Memories Shared by Travelers Before You
-        </h1>
-        <p className="text-base md:text-xl mb-6">
-          Don’t just take our word for it. <br /> Here’s what fellow travelers
-          have to say about their journeys through Sri Lanka:
-        </p>
-        <div className="flex flex-row gap-6">
-          <div className="w-2/3 h-80 rounded-md shadow-md bg-white flex flex-col text-left p-4">
-            <div className="text-8xl justify-start">“</div>
-            <p className="text-sm md:text-base">
-              Roy Tours made our holiday stress-free and magical. Every detail
-              was taken care of, and we discovered places we’d never have found
-              on our own.
-            </p>
-            <p className=" text-sm mt-6 font-semibold">Emma</p>
-            <p className="text-sm">United Kingdom</p>
-          </div>
-          <div className="w-2/3 h-80 rounded-md shadow-md bg-white flex flex-col text-left p-4">
-            <div className="text-8xl justify-start">“</div>
-            <p className="text-sm md:text-base">
-              Roy Tours made our holiday stress-free and magical. Every detail
-              was taken care of, and we discovered places we’d never have found
-              on our own.
-            </p>
-            <p className=" text-sm mt-6 font-semibold">Emma</p>
-            <p className="text-sm">United Kingdom</p>
-          </div>
-        </div>
+        <Testimonials/>
       </section>
       <section className="relative flex p-4 bg-[url(/image/contactImg.png)] bg-cover bg-bottom bg-no-repeat h-[50dvh] overflow-hidden w-full">
         <div className="z-10 flex flex-col items-center text-center justify-center w-full">
