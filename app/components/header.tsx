@@ -1,9 +1,42 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+
+const Navbar = () => {};
+
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBlur, setIsBlur] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setIsBlur(currentScrollY > 0);
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, []);
   return (
-    <header className=" top-0 left-0 w-full z-10">
-      <nav className="flex items-center justify-between p-4">
+    <header className="fixed top-0 left-0 w-full z-100">
+      <nav
+        className={`flex items-center justify-between p-4 transition-transform duration-300 ${
+          isBlur ? "backdrop-blur-sm" : ""
+        } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      >
         <Image
           src="/image/logo.png"
           alt="Roytours Logo"
