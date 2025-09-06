@@ -5,13 +5,7 @@ export default function Home() {
   return (
     <div className="text-[#1e1e1e] min-h-screen pt-20 flex flex-col gap-10">
       <section>
-<<<<<<< HEAD
-
         <div className="relative rounded-2xl h-[85dvh] mx-4 mb-4 flex items-center justify-center lg:justify-start text-center overflow-hidden p-2">
-=======
-        <Header></Header>
-        <div className="relative rounded-2xl h-[85dvh] mx-4 mb-4 flex items-center justify-center lg:justify-start text-center overflow-hidden p-2 pb-4">
->>>>>>> 8c30a48a1072e645b3053f3edf8491bc2f3a63a6
           <video
             autoPlay
             loop
@@ -326,88 +320,8 @@ export default function Home() {
           {/* Overlay with gradient */}
           <div className="absolute inset-0 bg-linear-to-t from-[#1e1e1e] to-transparent " />
         </section>
-        <footer className="p-4 bg-[#1e1e1e] text-white text-center items-center flex flex-col">
-          <h1 className="text-4xl font-semibold mb-2">
-            Let’s Plan Your Journey Together
-          </h1>
-          <p className="text-base mb-6">
-            Got a question or ready to book your adventure? We’d love to hear
-            from you.
-          </p>
-<<<<<<< HEAD
-          <button className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
-            <div className="pl-4 py-2 text-white relative z-10 group-hover:text-[#1e1e1e] transition-colors duration-300">
-              Let's Go{" "}
-            </div>
-            <div className="w-full h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff] z-10">
-              <svg
-                width="18"
-                height="17"
-                viewBox="0 0 18 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                  stroke="#1e1e1e"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <span className="absolute rounded-full inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-          </button>
-        </div>
-        {/* Overlay with gradient */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#1e1e1e] to-transparent " />
-      </section>
-     
-=======
-          <div className="flex flex-col text-center items-center gap-2">
-            <h4 className="font-bold">Quick Links</h4>
-            <ul className="flex flex-col gap-2 ">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">Our Story</Link>
-              </li>
-              <li>
-                <Link href="/contact">Experiences</Link>
-              </li>
-              <li>
-                <Link href="/contact">Destinations</Link>
-              </li>
-              <li>
-                <Link href="/contact">Gallery</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <img
-              src="\image\Roy Tours Logo White.png"
-              alt="Roy Tours Logo"
-              className="w-[199px] mt-6 mb-4"
-            />
-          </div>
-          <div className="border-t-1 w-full text-sm flex flex-col lg:flex-row lg:justify-center text-center items-center gap-2 pt-4">
-            <p>
-              All Rights Reserved By Roy Tours.{" "}
-              <span className="hidden lg:inline">|</span>
-            </p>
-            <span className="flex items-center gap-2">
-              Developed By
-              <img
-                src="\image\cloud wave.png"
-                alt="Developer Logo"
-                className="h-[15px]"
-              />{" "}
-            </span>
-          </div>
-        </footer>
+        
       </div>
->>>>>>> 8c30a48a1072e645b3053f3edf8491bc2f3a63a6
     </div>
   );
 }
