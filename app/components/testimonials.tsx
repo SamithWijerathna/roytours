@@ -26,15 +26,15 @@ const testimonials = [
 
 export default function Testimonials() {
   // Create enough copies for smooth infinite scroll (6 sets should cover all screen sizes)
-  const allTestimonials = Array.from({ length: 6 }, (_, setIndex) => 
+  const allTestimonials = Array.from({ length: 6 }, (_, setIndex) =>
     testimonials.map((testimonial, index) => ({
       ...testimonial,
-      key: `${setIndex}-${index}`
+      key: `${setIndex}-${index}`,
     }))
   ).flat();
 
   return (
-    <section className="p-4 flex flex-col items-center text-center overflow-hidden">
+    <section className="p-4 flex flex-col items-center text-center">
       <div className="px-4 py-2 border border-[#1e1e1e] w-fit rounded-full text-sm mb-2">
         Testimonials
       </div>
@@ -45,19 +45,19 @@ export default function Testimonials() {
         Don't just take our word for it. <br /> Here's what fellow travelers
         have to say about their journeys through Sri Lanka:
       </p>
-      
+
       {/* Stable Infinite Conveyor */}
       <div className="w-screen overflow-hidden py-5">
         <motion.div
           className="flex gap-6"
-          animate={{ 
-            x: [0, -(344 * 4)] // Move exactly 4 cards (one complete set)
+          animate={{
+            x: [0, -(344 * 4)], // Move exactly 4 cards (one complete set)
           }}
-          transition={{ 
+          transition={{
             duration: 20,
             repeat: Infinity,
             ease: "linear",
-            repeatType: "loop"
+            repeatType: "loop",
           }}
         >
           {allTestimonials.map((testimonial) => (
