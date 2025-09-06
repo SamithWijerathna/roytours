@@ -47,7 +47,7 @@ export default function Testimonials() {
       </p>
       
       {/* Stable Infinite Conveyor */}
-      <div className="w-full overflow-hidden py-5">
+      <div className="w-screen overflow-hidden py-5">
         <motion.div
           className="flex gap-6"
           animate={{ 

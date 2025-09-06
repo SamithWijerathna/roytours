@@ -1,9 +1,8 @@
-import Header from "../components/header";
 
 export default function About() {
   return (
     <div>
-      <Header />
+
       <section className="relative flex px-10 w-full h-screen bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
@@ -45,9 +44,9 @@ export default function About() {
                   <path
                     d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
                     stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>
@@ -66,7 +65,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Overlay with opacity and gradient */}
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
     </div>
