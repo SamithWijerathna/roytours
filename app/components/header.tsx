@@ -60,7 +60,7 @@ export default function Header() {
         {/* Mobile Menu Toggle */}
         <button
           className="md:hidden flex items-center justify-center p-2"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)} 
         >
           <svg
             width="26"
