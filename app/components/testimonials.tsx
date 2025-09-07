@@ -25,7 +25,6 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  // Create enough copies for smooth infinite scroll (6 sets should cover all screen sizes)
   const allTestimonials = Array.from({ length: 6 }, (_, setIndex) =>
     testimonials.map((testimonial, index) => ({
       ...testimonial,
@@ -45,13 +44,11 @@ export default function Testimonials() {
         Don't just take our word for it. <br /> Here's what fellow travelers
         have to say about their journeys through Sri Lanka:
       </p>
-
-      {/* Stable Infinite Conveyor */}
       <div className="w-screen overflow-hidden py-5">
         <motion.div
           className="flex gap-6"
           animate={{
-            x: [0, -(344 * 4)], // Move exactly 4 cards (one complete set)
+            x: [0, -(344 * 4)],
           }}
           transition={{
             duration: 20,

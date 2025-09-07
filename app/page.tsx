@@ -19,10 +19,8 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
 
-          {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 -z-10" />
 
-          {/* Content */}
           <div className="max-w-xl text-white flex flex-col items-center lg:items-start lg:text-left lg:p-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Experience the <br />
@@ -45,9 +43,9 @@ export default function Home() {
                     <path
                       d="M1.79169 11.7084L12.2084 1.29169M12.2084 1.29169H1.79169M12.2084 1.29169V11.7084"
                       stroke="#1E1E1E"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </div>
@@ -104,9 +102,9 @@ export default function Home() {
                   <path
                     d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
                     stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>
@@ -143,8 +141,7 @@ export default function Home() {
           every step of your journey is carefully curated with pride and genuine
           passion.
         </p>
-       <DeasinationSlider/>
-       
+        <DeasinationSlider />
       </section>
 
       <section className="p-4 flex flex-col items-center text-center ">
@@ -278,19 +275,17 @@ export default function Home() {
                   <path
                     d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
                     stroke="#1e1e1e"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>
               <span className="absolute rounded-full inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
             </button>
           </div>
-          {/* Overlay with gradient */}
           <div className="absolute inset-0 bg-linear-to-t from-[#1e1e1e] to-transparent " />
         </section>
-        
       </div>
     </div>
   );

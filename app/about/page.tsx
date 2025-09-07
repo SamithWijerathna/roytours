@@ -46,12 +46,12 @@ export default function About() {
         {/* Overlay with opacity and gradient */}
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
-      <section className="p-4 flex flex-col lg:items-center lg:justify-center gap-4">
+      <section className="p-4 flex flex-col lg:items-center lg:justify-center gap-4 px-[50px]">
         <div className="w-full bg-[#D9D9D9] text-center rounded-md p-4 pb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold mb-4">
             Our Mission
           </h2>
-          <p className="lg:inline-block lg:w-md lg:justify-center">
+          <p className="lg:inline-block lg:w-md  lg:justify-center">
             With over a decade of experience, we’ve dedicated ourselves to
             crafting unforgettable journeys across Sri Lanka. From the misty
             hills of the highlands to the golden southern shores, we’ve guided
@@ -59,7 +59,7 @@ export default function About() {
           </p>
         </div>
         <div className="w-full bg-[#D9D9D9] text-center rounded-md p-4 pb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold mb-4">
             Our Vision
           </h2>
           <p className="lg:inline-block lg:w-md lg:justify-center">

@@ -14,14 +14,11 @@ export default function ImageCarousel() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Number of images visible per view
   const visibleCount = 3;
-  const imageWidth = 505; // width of each image (px)
+  const imageWidth = 505;
 
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? 0 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? 0 : prev - 1));
   };
 
   const handleNext = () => {
@@ -32,7 +29,6 @@ export default function ImageCarousel() {
 
   return (
     <div className="flex flex-col items-center mt-6 w-full">
-      {/* Slider Container */}
       <div className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500"
@@ -41,10 +37,7 @@ export default function ImageCarousel() {
           }}
         >
           {images.map((img, index) => (
-            <div
-              key={index}
-              className="min-w-[500px] flex justify-center px-2"
-            >
+            <div key={index} className="min-w-[500px] flex justify-center px-2">
               <Image
                 src={img}
                 alt={`Slide ${index}`}
@@ -56,8 +49,8 @@ export default function ImageCarousel() {
           ))}
         </div>
       </div>
-      <div  className="flex justify-between w-full py-2 h-full mt-6">
-         <a className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+      <div className="flex justify-between w-full py-2 h-full mt-6">
+        <a className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
           <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
             See More{" "}
           </div>
@@ -72,35 +65,64 @@ export default function ImageCarousel() {
               <path
                 d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
           <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </a>
         <div className="flex gap-4">
-              <button
-          onClick={handlePrev}
-          className="hover:scale-105 transition-all ">
-          <svg width="50" height="60" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 25C50 38.8071 38.8071 50 25 50V50C11.1929 50 0 38.8071 0 25V25C0 11.1929 11.1929 0 25 0V0C38.8071 0 50 11.1929 50 25V25Z" fill="#1E1E1E"/>
-            <path d="M36.6667 25L13.3333 25M13.3333 25L25 36.6666M13.3333 25L25 13.3333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-
-        </button>
-        <button
-          onClick={handleNext}
-          className="hover:scale-105 transition-all">
-          <svg width="50" height="60" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 25C0 11.1929 11.1929 0 25 0V0C38.8071 0 50 11.1929 50 25V25C50 38.8071 38.8071 50 25 50V50C11.1929 50 0 38.8071 0 25V25Z" fill="#1E1E1E"/>
-            <path d="M13.3333 25H36.6667M36.6667 25L25 13.3334M36.6667 25L25 36.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-
-        </button>
+          <button
+            onClick={handlePrev}
+            className="hover:scale-105 transition-all "
+          >
+            <svg
+              width="50"
+              height="60"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M50 25C50 38.8071 38.8071 50 25 50V50C11.1929 50 0 38.8071 0 25V25C0 11.1929 11.1929 0 25 0V0C38.8071 0 50 11.1929 50 25V25Z"
+                fill="#1E1E1E"
+              />
+              <path
+                d="M36.6667 25L13.3333 25M13.3333 25L25 36.6666M13.3333 25L25 13.3333"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className="hover:scale-105 transition-all"
+          >
+            <svg
+              width="50"
+              height="60"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 25C0 11.1929 11.1929 0 25 0V0C38.8071 0 50 11.1929 50 25V25C50 38.8071 38.8071 50 25 50V50C11.1929 50 0 38.8071 0 25V25Z"
+                fill="#1E1E1E"
+              />
+              <path
+                d="M13.3333 25H36.6667M36.6667 25L25 13.3334M36.6667 25L25 36.6667"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
-      
       </div>
     </div>
   );
