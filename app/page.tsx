@@ -82,9 +82,9 @@ export default function Home() {
               className="lg:hidden"
             />
             <p className="mt-6 text-base md:text-xl lg:text-justify">
-              With over a decade of experience, we’ve dedicated ourselves to
+              With over a decade of experience, we've dedicated ourselves to
               crafting unforgettable journeys across Sri Lanka. From the misty
-              hills of the highlands to the golden southern shores, we’ve guided
+              hills of the highlands to the golden southern shores, we've guided
               travelers through stories of heritage, beautxy, and discovery.
             </p>
             <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
