@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative lg:h-dvh flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+      <section className="relative lg:min-h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -127,12 +127,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
 
-      <section className="p-[50px] flex flex-col gap-2.5 items-center lg:items-start lg:text-left text-center">
-        <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
+      <section className="lg:p-[50px] p-4 flex flex-col gap-2.5 lg:min-h-screen items-center lg:items-start lg:text-left text-center">
+        <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base ">
           {" "}
           Experiences{" "}
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold mb-2">
+        <h1 className="text-4xl md:text-5xl font-semibold ">
           A Journey Shaped by Pride and Passion
         </h1>
         <p className="text-base lg:w-[75%] md:text-xl">
