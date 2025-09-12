@@ -1,0 +1,4 @@
+   const [results] = await connection.query(
+        `INSERT INTO users (user_name, user_password, user_email, isadmin) VALUES (?, ?, ?, ?)`,
+        ["samith", "samith@071", "0wsamithaw0@gmail.com", "0"]
+        );

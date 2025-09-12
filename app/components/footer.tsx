@@ -1,9 +1,14 @@
-import { div } from "framer-motion/client";
+"use client";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function footer() {
+   const pathname = usePathname();
+    const isAdmin = pathname.startsWith("/admin");
+
   return (
-    <div>
+    <div className={`${!isAdmin ? "block" : "hidden"}`}>
       <footer className=" bg-[#1e1e1e] text-white hidden sm:block pt-8">
         <div className="flex flex-row justify-between w-full items-end px-[50px]">
           <h2 className="text-6xl font-semibold w-1/2">
@@ -55,7 +60,7 @@ export default function footer() {
             Developed By
             <a href="https://www.cloudwave.asia">
               <img
-                src="\image\cloud wave.png"
+                src="\image\cloudwave.png"
                 alt="Developer Logo"
                 className="h-[15px]"
               />
@@ -94,7 +99,7 @@ export default function footer() {
         </div>
         <div>
           <img
-            src="\image\Roy Tours Logo White.png"
+            src="\image\roy-Logo-white.png"
             alt="Roy Tours Logo"
             className="w-[199px] mt-6 mb-4"
           />
@@ -107,7 +112,7 @@ export default function footer() {
           <span className="flex items-center gap-2">
             Developed By
             <img
-              src="\image\cloud wave.png"
+              src="\image\cloudwave.png"
               alt="Developer Logo"
               className="h-[15px]"
             />{" "}

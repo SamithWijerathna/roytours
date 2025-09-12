@@ -4,6 +4,7 @@ import "./globals.css";
 import { Urbanist } from "next/font/google";
 import Footer from "./components/footer";
 import Header from "./components/header";
+
 const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -12,18 +13,21 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   title: "Roytours",
   description: "Explore the world with Roytours",
+  icons: {
+    icon: ["/icon.ico"],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <Header></Header>
-      <body className={`antialiased ${urbanist.className}`}>{children}</body>
-      <Footer></Footer>
+    <html lang="en" className={urbanist.className}>
+      <body className="antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

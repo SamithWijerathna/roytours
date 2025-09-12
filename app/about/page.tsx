@@ -72,7 +72,7 @@ export default function About() {
 
       <section className="flex flex-col lg:min-h-screen items-center justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">
-          We don’t just guide tours — we create connections that last a
+          We don’t just guide tours, we create connections that last a
           lifetime.
         </h1>
         <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
