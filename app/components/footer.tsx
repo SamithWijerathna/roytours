@@ -41,9 +41,7 @@ export default function footer() {
               <li>
                 <Link href="/Experiences">Experiences</Link>
               </li>
-              <li>
-                <Link href="/contact">Destinations</Link>
-              </li>
+
               <li>
                 <Link href="/contact">Gallery</Link>
               </li>
@@ -90,9 +88,7 @@ export default function footer() {
             <li>
               <Link href="/Experiences">Experiences</Link>
             </li>
-            <li>
-              <Link href="/contact">Destinations</Link>
-            </li>
+
             <li>
               <Link href="/contact">Gallery</Link>
             </li>

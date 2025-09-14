@@ -106,8 +106,8 @@ export default function Gallery() {
           </div>
         </div>
       </section>
-      <div className="flex items-center justify-center flex-col rounded-xl text-black w-full py-10 px-5">
-        <h1 className="text-4xl sm:text-5xl  font-semibold text-center mb-4">
+      <div className="flex items-center min-h-screen justify-center flex-col rounded-xl text-black w-full py-10 px-5">
+        <h1 className="text-4xl md:text-5xl  font-semibold text-center lg:inline-block lg:w-1/2 mb-4">
           These views are waiting for you Are you ready to explore?
         </h1>
 

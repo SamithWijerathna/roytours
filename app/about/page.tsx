@@ -3,8 +3,7 @@ import Header from "../components/header";
 export default function About() {
   return (
     <div className="text-[#1e1e1e] pt-24 lg:pt-0 ">
-      <Header />
-      <section className="relative lg:h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+      <section className="lg:pr-[50px] relative lg:min-h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -46,7 +45,7 @@ export default function About() {
         {/* Overlay with opacity and gradient */}
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
-      <section className="p-4 flex flex-col lg:items-center lg:justify-center gap-4 px-[50px]">
+      <section className="p-4 lg:min-h-screen flex flex-col lg:items-center lg:justify-center gap-4 lg:px-[50px]">
         <div className="w-full bg-[#D9D9D9] text-center rounded-md p-4 pb-8">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold mb-4">
             Our Mission
@@ -71,7 +70,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center py-10 ">
+      <section className="flex flex-col lg:min-h-screen items-center justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">
           We don’t just guide tours, we create connections that last a
           lifetime.
