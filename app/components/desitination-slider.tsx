@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function ImageCarousel() {
   const images = [
-    "/image/train.png",
-    "/image/train.png",
-    "/image/train.png",
-    "/image/train.png",
-    "/image/train.png",
-    "/image/train.png",
+    "/image/uploads/image-1.jpg",
+    "/image/uploads/image-2.jpg",
+    "/image/uploads/image-3.jpg",
+    "/image/uploads/image-4.jpg",
+    "/image/uploads/image-5.jpg",
+    "/image/uploads/image-6.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,13 +37,13 @@ export default function ImageCarousel() {
           }}
         >
           {images.map((img, index) => (
-            <div key={index} className="min-w-[500px] flex justify-center px-2">
+            <div key={index} className="min-w-[500px] h-[300px] flex justify-center px-2">
               <Image
                 src={img}
                 alt={`Slide ${index}`}
                 width={500}
                 height={200}
-                className="rounded-2xl"
+                className="rounded-2xl object-cover"
               />
             </div>
           ))}

@@ -1,12 +1,10 @@
-import {getDBConnection} from "../../api/db"
-import SideBar from "../components/sidebar";
+import WidgetManger  from "@/app/admin/components/widgets/widgetmanager/manager"
 
 export default async function AdminPanel(){
-    const db_connection = await getDBConnection();
-    
+
     return(
-    <div>
-        <SideBar/>
+    <div className="pl-66">
+      <WidgetManger />
     </div>
     )
 }

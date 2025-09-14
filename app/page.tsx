@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Testimonials from "./components/testimonials";
 import DeasinationSlider from "./components/desitination-slider";
+import Template from "@/app/admin/components/widgets/widget-render"
 
 export default function Home() {
   return (
@@ -49,7 +50,6 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                {/* Sliding background */}
                 <span className="absolute inset-0 rounded-full bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               </button>
               <p className="absolute lg:relative bottom-2 lg:w-1/2 text-base md:text-xl leading-relaxed">
@@ -123,7 +123,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Overlay with opacity and gradient */}
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
 
@@ -136,7 +135,7 @@ export default function Home() {
           A Journey Shaped by Pride and Passion
         </h1>
         <p className="text-base lg:w-[75%] md:text-xl">
-          Every tour is designed to celebrate Sri Lanka’s essence — its culture,
+          Every tour is designed to celebrate Sri Lanka’s essence its culture,
           landscapes, and people. From ancient temples to hidden waterfalls,
           every step of your journey is carefully curated with pride and genuine
           passion.
@@ -156,100 +155,7 @@ export default function Home() {
           From mountains to seas, temples to markets, discover the soul of my
           island home.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4">
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
+        <Template templateName="gallery" short_code="2691" />
       </section>
       <section className="p-4 flex flex-col items-center text-center overflow-hidden">
         <Testimonials />
