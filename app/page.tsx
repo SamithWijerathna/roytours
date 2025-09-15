@@ -126,7 +126,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
 
-      <section className="lg:p-[50px] p-4 flex flex-col gap-2.5 lg:min-h-screen items-center lg:items-start lg:text-left text-center">
+      <section className="lg:px-[50px] p-4 flex flex-col gap-2.5 lg:min-h-screen items-center lg:items-start lg:text-left text-center">
         <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base ">
           {" "}
           Experiences{" "}
@@ -140,7 +140,8 @@ export default function Home() {
           every step of your journey is carefully curated with pride and genuine
           passion.
         </p>
-        <DeasinationSlider />
+        <Template templateName="slider" short_code="3868" />
+
       </section>
 
       <section className="p-4 flex flex-col items-center text-center ">

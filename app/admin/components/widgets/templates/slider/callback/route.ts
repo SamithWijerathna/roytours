@@ -13,7 +13,7 @@ export async function GET(req: Request) {
   try {
     const currentFolder = path.join(
       process.cwd(),
-      "app/admin/components/widgets/templates/gallery"
+      "app/admin/components/widgets/templates/slider"
     );
     const infoPath = path.join(currentFolder, "info.thr");
     const content = await fs.readFile(infoPath, "utf-8");
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     // Load widget_uid
     const currentFolder = path.join(
       process.cwd(),
-      "app/admin/components/widgets/templates/gallery"
+      "app/admin/components/widgets/templates/slider"
     );
     const infoPath = path.join(currentFolder, "info.thr");
     const content = await fs.readFile(infoPath, "utf-8");

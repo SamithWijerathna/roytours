@@ -1,4 +1,4 @@
-import Header from "../components/header";
+import Template from "@/app/admin/components/widgets/widget-render"
 
 export default function Experiences() {
   return (
@@ -24,6 +24,7 @@ export default function Experiences() {
             Explore ancient cities, sacred temples, and timeless traditions that
             showcase Sri Lanka’s rich cultural heritage.
           </p>
+          <Template templateName="slider" short_code="1993" />
         </div>
         <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center">
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
@@ -33,6 +34,7 @@ export default function Experiences() {
             Safari in Yala, watch elephants roam in Minneriya, and enjoy the
             serenity of national parks.
           </p>
+          <Template templateName="slider" short_code="0258" />
         </div>
         <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center">
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">

@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-interface GalleryAdminProps {
+interface SliderAdminProps {
   id: number;
 }
 
-export default function GalleryAdmin({ id }: GalleryAdminProps) {
+export default function GalleryAdmin({ id }: SliderAdminProps) {
   const [images, setImages] = useState<string[]>([]);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -18,7 +18,7 @@ export default function GalleryAdmin({ id }: GalleryAdminProps) {
 
  const loadImages = async () => {
   try {
-    const res = await fetch(`/admin/components/widgets/templates/gallery/callback?short_code=${id}`);
+    const res = await fetch(`/admin/components/widgets/templates/slider/callback?short_code=${id}`);
     const data = await res.json();
 
     let list: string[] = [];
@@ -57,7 +57,7 @@ export default function GalleryAdmin({ id }: GalleryAdminProps) {
       formData.append("index", index.toString());
       formData.append("short_code", id.toString());
 
-      const res = await fetch("/admin/components/widgets/templates/gallery/callback", {
+      const res = await fetch("/admin/components/widgets/templates/slider/callback", {
         method: "POST",
         body: formData,
       });
@@ -81,7 +81,7 @@ export default function GalleryAdmin({ id }: GalleryAdminProps) {
       formData.append("short_code", id.toString());
       formData.append("remove", "true");
 
-      const res = await fetch("/admin/components/widgets/templates/gallery/callback", {
+      const res = await fetch("/admin/components/widgets/templates/slider/callback", {
         method: "POST",
         body: formData,
       });

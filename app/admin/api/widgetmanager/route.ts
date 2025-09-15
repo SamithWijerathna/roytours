@@ -69,7 +69,7 @@ export async function GET() {
   // Fetch existing widgets from DB
   const db = await getDBConnection();
   const [widgets]: any = await db.execute(
-    "SELECT widget_id, widget_uid, widget_name, active FROM widgets"
+    "SELECT widget_id, widget_uid, widget_name, short_code, active FROM widgets"
   );
 
   // Group widgets by template id

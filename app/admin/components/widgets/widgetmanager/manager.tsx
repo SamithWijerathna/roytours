@@ -118,7 +118,7 @@ const DynamicAdminPanel = selectedWidget
                     <div
                       key={w.widget_id}
                       className="relative mx-auto h-60 max-w-md overflow-hidden rounded-lg shadow hover:shadow-lg cursor-pointer cursor-pointer"
-                        onClick={() => setSelectedWidget({ id: w.widget_id, folder: t.folder })}
+                        onClick={() => setSelectedWidget({ id: w.short_code, folder: t.folder })}
                     >
                       {/* Use template banner */}
                       <img
