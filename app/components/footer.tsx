@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function footer() {
-   const pathname = usePathname();
-    const isAdmin = pathname.startsWith("/admin");
+  const pathname = usePathname();
+  const isAdmin = pathname.startsWith("/admin");
 
   return (
     <div className={`${!isAdmin ? "block" : "hidden"}`}>
@@ -14,7 +14,7 @@ export default function footer() {
           <h2 className="text-6xl font-semibold w-1/2">
             Let’s Plan Your Journey Together
           </h2>
-          <p className="font-normal w-1/2 text-xl">
+          <p className="font-normal w-1/2 text-lg">
             Got a question or ready to book your adventure? We’d love to hear
             from you.
           </p>
@@ -29,9 +29,9 @@ export default function footer() {
             ></Image>
           </div>
 
-          <div className="w-1/2 text-xl py-20">
+          <div className="w-1/2 text-lg py-20">
             <h4 className="font-semibold text-gray-400">Quick Links</h4>
-            <ul className="flex text-nowrap gap-4">
+            <ul className="flex text-nowrap flex-wrap gap-4">
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -43,7 +43,7 @@ export default function footer() {
               </li>
 
               <li>
-                <Link href="/contact">Gallery</Link>
+                <Link href="/gallery">Gallery</Link>
               </li>
               <li>
                 <Link href="/contact">Contact Us</Link>
@@ -90,7 +90,7 @@ export default function footer() {
             </li>
 
             <li>
-              <Link href="/contact">Gallery</Link>
+              <Link href="/gallery">Gallery</Link>
             </li>
             <li>
               <Link href="/contact">Contact Us</Link>

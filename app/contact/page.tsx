@@ -7,13 +7,13 @@ export default function Contact() {
         backgroundPosition: "center",
         minHeight: "100vh",
       }}
-      className="flex items-center justify-center text-center p-8"
+      className="flex items-center justify-center text-center p-4"
     >
       <div className="flex items-center justify-center flex-col rounded-xl text-black w-full">
         <h1 className="text-5xl font-bold mb-4">
           Let’s Plan Your Journey Together
         </h1>
-        <p className="text-lg">
+        <p className="text-base sm:text-lg ">
           Got a question or ready to book your adventure? We'd love to hear from
           you.
         </p>

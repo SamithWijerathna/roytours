@@ -33,14 +33,14 @@ export default function Testimonials() {
   ).flat();
 
   return (
-    <section className="p-4 flex flex-col items-center text-center">
+    <section className="p-4 md:px-[50px] flex flex-col items-center text-center">
       <div className="px-4 py-2 border border-[#1e1e1e] w-fit rounded-full text-sm mb-2">
         Testimonials
       </div>
       <h1 className="text-4xl md:text-5xl font-semibold mb-2">
         Memories Shared by Travelers Before You
       </h1>
-      <p className="text-base md:text-xl mb-6">
+      <p className="text-base md:text-lg mb-6">
         Don't just take our word for it. <br /> Here's what fellow travelers
         have to say about their journeys through Sri Lanka:
       </p>
