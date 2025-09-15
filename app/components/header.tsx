@@ -10,7 +10,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBlur, setIsBlur] = useState(false);
   const pathname = usePathname();
-   const isAdmin = pathname.startsWith("/admin");
+  const isAdmin = pathname.startsWith("/admin");
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -32,7 +32,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`${!isAdmin ? "fixed top-0 left-0 w-full z-50" : "hidden"}`}>
+    <header
+      className={`${!isAdmin ? "fixed top-0 left-0 w-full z-50" : "hidden"}`}
+    >
       <nav
         className={`flex items-center justify-between p-4 transition-transform duration-300 ${
           isBlur ? "backdrop-blur-sm" : ""
@@ -69,7 +71,7 @@ export default function Header() {
           <li>
             <Link
               className={
-                pathname === "/experiences"
+                pathname === "/Experiences"
                   ? "font-bold text-black"
                   : "text-gray-700"
               }

@@ -1,7 +1,7 @@
 export default function Gallery() {
   return (
     <div className="py-20">
-      <div className="flex items-center justify-center flex-col rounded-xl text-black w-full py-25 text-center px-5">
+      <div className="flex items-center justify-center flex-col rounded-xl text-black w-full py-25 text-center px-4">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">
           A Visual Journey Through Sri Lanka
         </h1>

@@ -2,8 +2,8 @@ import Header from "../components/header";
 
 export default function About() {
   return (
-    <div className="text-[#1e1e1e] pt-24 lg:pt-0 ">
-      <section className="lg:pr-[50px] relative lg:min-h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+    <div className="text-[#1e1e1e] pt-24 md:pt-0 ">
+      <section className="lg:pr-[50px] relative md:min-h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -19,11 +19,11 @@ export default function About() {
               alt="Mr Roy Kumara"
               className="lg:hidden"
             />
-            <p className="mt-6 text-base font-semibold md:text-xl lg:text-justify">
+            <p className="mt-6 text-base font-semibold md:text-lg lg:text-justify">
               With over a decade of experience, we’ve dedicated ourselves to
               crafting unforgettable journeys across
             </p>
-            <p className="mt-6 text-base md:text-xl lg:text-justify">
+            <p className="mt-6 text-base md:text-lg lg:text-justify">
               Every traveler has a story, and so do we. Born from a love for Sri
               Lanka’s landscapes, culture, and people, our tours are more than
               itineraries — they are heartfelt experiences crafted with care.
@@ -32,11 +32,11 @@ export default function About() {
             <div className="mt-12 mb-8 flex flex-row gap-8">
               <div>
                 <p className="text-7xl font-bold">10+</p>
-                <p className="text-base md:text-xl">Years of experience</p>
+                <p className="text-base md:text-lg">Years of experience</p>
               </div>
               <div>
                 <p className="text-7xl font-semibold">100+</p>
-                <p className="text-base md:text-xl">Happy Explorers</p>
+                <p className="text-base md:text-lg">Happy Explorers</p>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold mb-4">
             Our Mission
           </h2>
-          <p className="lg:inline-block lg:w-md  lg:justify-center">
+          <p className="lg:inline-block lg:w-lg text-base md:text-lg lg:justify-center">
             With over a decade of experience, we’ve dedicated ourselves to
             crafting unforgettable journeys across Sri Lanka. From the misty
             hills of the highlands to the golden southern shores, we’ve guided
@@ -61,7 +61,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold mb-4">
             Our Vision
           </h2>
-          <p className="lg:inline-block lg:w-md lg:justify-center">
+          <p className="lg:inline-block lg:w-lg text-base md:text-lg lg:justify-center">
             With over a decade of experience, we’ve dedicated ourselves to
             crafting unforgettable journeys across Sri Lanka. From the misty
             hills of the highlands to the golden southern shores, we’ve guided
@@ -70,10 +70,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="flex flex-col lg:min-h-screen items-center justify-center">
+      <section className="flex flex-col min-h-screen items-center justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">
-          We don’t just guide tours, we create connections that last a
-          lifetime.
+          We don’t just guide tours, we create connections that last a lifetime.
         </h1>
         <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
           <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">

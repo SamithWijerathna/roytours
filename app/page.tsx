@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="text-[#1e1e1e] min-h-screen pt-20 flex flex-col gap-10">
       <section>
-        <div className="relative rounded-2xl h-[85dvh] mx-4 mb-4 flex items-center justify-center lg:justify-start text-center overflow-hidden p-2">
+        <div className="relative rounded-2xl h-[85dvh] md:h-[90dvh] lg:h-[85dvh]  mx-4 mb-4 flex items-center justify-center lg:justify-start text-center overflow-hidden p-2">
           <video
             autoPlay
             loop
@@ -52,16 +52,17 @@ export default function Home() {
                 </div>
                 <span className="absolute inset-0 rounded-full bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               </button>
-              <p className="absolute lg:relative bottom-2 lg:w-1/2 text-base md:text-xl leading-relaxed">
+              <p className="absolute md:justify-center lg:relative bottom-2 lg:w-1/2 md:w-full text-base md:text-lg leading-relaxed">
                 From misty mountains to golden beaches, from cultural treasures
-                to warm smiles, discover Sri Lanka like never before with a
-                guide who knows its heart.
+                to warm smiles, discover{" "}
+                <span className="text-nowrap"> Sri Lanka</span> like never
+                before with a guide who knows its heart.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="relative lg:min-h-screen flex px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+      <section className="relative md:min-h-screen flex p-4 lg:px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -81,11 +82,11 @@ export default function Home() {
               alt="Mr Roy Kumara"
               className="lg:hidden"
             />
-            <p className="mt-6 text-base md:text-xl lg:text-justify">
+            <p className="mt-6 text-base md:text-lg lg:text-justify">
               With over a decade of experience, we've dedicated ourselves to
               crafting unforgettable journeys across Sri Lanka. From the misty
               hills of the highlands to the golden southern shores, we've guided
-              travelers through stories of heritage, beautxy, and discovery.
+              travelers through stories of heritage, beauty, and discovery.
             </p>
             <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
               <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
@@ -113,11 +114,11 @@ export default function Home() {
             <div className="mt-12 mb-8 flex flex-row gap-8">
               <div>
                 <p className="text-7xl font-bold">10+</p>
-                <p className="text-base md:text-xl">Years of experience</p>
+                <p className="text-base md:text-lg">Years of experience</p>
               </div>
               <div>
                 <p className="text-7xl font-semibold">100+</p>
-                <p className="text-base md:text-xl">Happy Explorers</p>
+                <p className="text-base md:text-lg">Happy Explorers</p>
               </div>
             </div>
           </div>
@@ -135,7 +136,7 @@ export default function Home() {
           A Journey Shaped by Pride and Passion
         </h1>
         <p className="text-base lg:w-[75%] md:text-xl">
-          Every tour is designed to celebrate Sri Lanka’s essence its culture,
+          Every tour is designed to celebrate Sri Lanka’s essence — its culture,
           landscapes, and people. From ancient temples to hidden waterfalls,
           every step of your journey is carefully curated with pride and genuine
           passion.
@@ -152,7 +153,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-5xl font-semibold mb-2">
           A Glimpse of Beauty and Diversity
         </h1>
-        <p className="text-base md:text-xl mb-6">
+        <p className="text-base md:text-lg mb-6">
           From mountains to seas, temples to markets, discover the soul of my
           island home.
         </p>

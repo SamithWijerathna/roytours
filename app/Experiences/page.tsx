@@ -9,7 +9,7 @@ export default function Experiences() {
             Choose Your <span className="text-nowrap">Sri Lankan</span>{" "}
             Adventure
           </h1>
-          <p className="text-base md:text-xl lg:w-[60%]">
+          <p className="text-base md:text-lg lg:w-[60%]">
             Whether you’re seeking cultural depth, scenic escapes, or thrilling
             adventures, we have a journey tailored for you. Explore our
             carefully crafted tours, or let us design something unique just for
@@ -20,7 +20,7 @@ export default function Experiences() {
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
             Cultural Treasures Tour
           </h2>
-          <p className="text-base md:text-xl lg:w-[75%]">
+          <p className="text-base md:text-gg lg:w-[75%]">
             Explore ancient cities, sacred temples, and timeless traditions that
             showcase Sri Lanka’s rich cultural heritage.
           </p>
@@ -30,7 +30,7 @@ export default function Experiences() {
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
             Nature & Wildlife Tour
           </h2>
-          <p className="text-base md:text-xl lg:w-[75%]">
+          <p className="text-base md:text-lg lg:w-[75%]">
             Safari in Yala, watch elephants roam in Minneriya, and enjoy the
             serenity of national parks.
           </p>
@@ -40,7 +40,7 @@ export default function Experiences() {
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
             Hill Country Escape
           </h2>
-          <p className="text-base md:text-xl lg:w-[75%]">
+          <p className="text-base md:text-lg lg:w-[75%]">
             Train rides through emerald tea plantations, misty mountain hikes,
             and waterfalls.
           </p>
@@ -49,7 +49,7 @@ export default function Experiences() {
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
             Coastal Paradise Tour
           </h2>
-          <p className="text-base md:text-xl lg:w-[75%]">
+          <p className="text-base md:text-lg lg:w-[75%]">
             Sun, sand, and sea in places like Galle, Mirissa, and Trincomalee.
           </p>
         </div>
