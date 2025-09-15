@@ -1,10 +1,10 @@
-import Template from "@/app/admin/components/widgets/widget-render"
+import Template from "@/app/admin/components/widgets/widget-render";
 
 export default function Experiences() {
   return (
     <div className="lg:px-[50px] flex flex-col gap-8 text-[#1e1e1e]">
-      <section className="p-4 pt-24 lg:pt-0 flex flex-col gap-12">
-        <div className="flex flex-col lg:min-h-screen items-center text-center justify-center py-20 lg:py-0">
+      <section className="p-4 pt-24  flex flex-col gap-12">
+        <div className="flex flex-col  items-center text-center justify-center py-20 ">
           <h1 className="text-4xl md:text-5xl font-semibold mb-6 lg:mb-2">
             Choose Your <span className="text-nowrap">Sri Lankan</span>{" "}
             Adventure
@@ -58,29 +58,35 @@ export default function Experiences() {
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">
           Your journey, your story — let’s create it together.
         </h1>
-        <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
-          <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
-            Start My Adventure{" "}
-          </div>
-          <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
-            <svg
-              width="18"
-              height="17"
-              viewBox="0 0 18 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-          <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-        </button>
+        <a
+          href="https://wa.me/94750439266"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+            <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+              Start My Adventure
+            </div>
+            <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
+              <svg
+                width="18"
+                height="17"
+                viewBox="0 0 18 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+          </button>
+        </a>
       </section>
     </div>
   );

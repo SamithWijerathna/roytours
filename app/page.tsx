@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Testimonials from "./components/testimonials";
 import DeasinationSlider from "./components/desitination-slider";
-import Template from "@/app/admin/components/widgets/widget-render"
+import Template from "@/app/admin/components/widgets/widget-render";
 
 export default function Home() {
   return (
@@ -28,30 +28,36 @@ export default function Home() {
               Magic of Sri Lanka
             </h1>
             <div className="lg:absolute flex flex-col items-center lg:flex-row lg:pr-8 lg:justify-between lg:w-full bottom-2 ">
-              <button className="relative bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
-                <div className="pl-4 py-2 relative z-10 group-hover:text-black transition-colors duration-300">
-                  Start Your Adventure{" "}
-                </div>
+              <a
+                href="https://wa.me/94750439266"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="relative bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+                  <div className="pl-4 py-2 relative z-10 group-hover:text-black transition-colors duration-300">
+                    Start Your Adventure{" "}
+                  </div>
 
-                <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff]">
-                  <svg
-                    width="14"
-                    height="13"
-                    viewBox="0 0 14 13"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.79169 11.7084L12.2084 1.29169M12.2084 1.29169H1.79169M12.2084 1.29169V11.7084"
-                      stroke="#1E1E1E"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <span className="absolute inset-0 rounded-full bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-              </button>
+                  <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff]">
+                    <svg
+                      width="14"
+                      height="13"
+                      viewBox="0 0 14 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1.79169 11.7084L12.2084 1.29169M12.2084 1.29169H1.79169M12.2084 1.29169V11.7084"
+                        stroke="#1E1E1E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span className="absolute inset-0 rounded-full bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                </button>
+              </a>
               <p className="absolute md:justify-center lg:relative bottom-2 lg:w-1/2 md:w-full text-base md:text-lg leading-relaxed">
                 From misty mountains to golden beaches, from cultural treasures
                 to warm smiles, discover{" "}
@@ -88,29 +94,31 @@ export default function Home() {
               hills of the highlands to the golden southern shores, we've guided
               travelers through stories of heritage, beauty, and discovery.
             </p>
-            <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
-              <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
-                Read More{" "}
-              </div>
-              <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
-                <svg
-                  width="18"
-                  height="17"
-                  viewBox="0 0 18 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-            </button>
+            <Link href="/about">
+              <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+                <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+                  Read More
+                </div>
+                <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
+                  <svg
+                    width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              </button>
+            </Link>
             <div className="mt-12 mb-8 flex flex-row gap-8">
               <div>
                 <p className="text-7xl font-bold">10+</p>
@@ -142,7 +150,6 @@ export default function Home() {
           passion.
         </p>
         <Template templateName="slider" short_code="3868" />
-
       </section>
 
       <section className="p-4 flex flex-col items-center text-center ">
@@ -168,29 +175,35 @@ export default function Home() {
             <p className="text-5xl font-semibold text-white ">
               Are you ready for your next adventure?
             </p>
-            <button className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
-              <div className="pl-4 py-2 text-white relative z-10 group-hover:text-[#1e1e1e] transition-colors duration-300">
-                Let's Go{" "}
-              </div>
-              <div className="w-full h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff] z-10">
-                <svg
-                  width="18"
-                  height="17"
-                  viewBox="0 0 18 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                    stroke="#1e1e1e"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="absolute rounded-full inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-            </button>
+            <a
+              href="https://wa.me/94750439266"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+                <div className="pl-4 py-2 text-white relative z-10 group-hover:text-[#1e1e1e] transition-colors duration-300">
+                  Let's Go
+                </div>
+                <div className="w-full h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#ffffff] z-10">
+                  <svg
+                    width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
+                      stroke="#1e1e1e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span className="absolute rounded-full inset-0 bg-[#ffffff] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              </button>
+            </a>
           </div>
           <div className="absolute inset-0 bg-linear-to-t from-[#1e1e1e] to-transparent " />
         </section>

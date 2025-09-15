@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 interface GalleryTemplateProps {
@@ -10,13 +10,17 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const visibleCount = 3; 
-  const imageWidth = 505; 
+  const visibleCount = 3;
+  const [imageWidth, setImageWidth] = useState(505);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch(`/admin/components/widgets/templates/slider/callback?short_code=${short_code}`)
-      .then(res => res.json())
-      .then(data => {
+    fetch(
+      `/admin/components/widgets/templates/slider/callback?short_code=${short_code}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
         const allImages: string[] = [];
         if (data.images && Array.isArray(data.images)) {
           data.images.forEach((item: any) => {
@@ -30,14 +34,36 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
       .catch(console.error);
   }, [short_code]);
 
+  useEffect(() => {
+    function updateWidth() {
+      if (imageRef.current) {
+        setImageWidth(imageRef.current.offsetWidth);
+      }
+    }
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, [images]);
+
   const handlePrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? 0 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex(prev =>
-      prev >= images.length - visibleCount ? prev : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 50) handleNext(); // swipe left
+    else if (diff < -50) handlePrev(); // swipe right
+    setTouchStartX(null);
   };
 
   return (
@@ -48,9 +74,15 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
           style={{
             transform: `translateX(-${currentIndex * imageWidth}px)`,
           }}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {images.map((img, index) => (
-            <div key={index} className="min-w-[500px] h-[300px] flex justify-center px-2">
+            <div
+              key={index}
+              className="min-w-fit h-[300px] flex justify-center px-2"
+              ref={index === 0 ? imageRef : null}
+            >
               <Image
                 src={img}
                 alt={`Slide ${index + 1}`}
@@ -63,8 +95,11 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
         </div>
       </div>
 
-       <div className="flex justify-between w-full py-2 h-full mt-6">
-        <a className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+      <div className="flex justify-between w-full py-2 h-full mt-6">
+        <a
+          href="/Experiences"
+          className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer"
+        >
           <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
             See More{" "}
           </div>

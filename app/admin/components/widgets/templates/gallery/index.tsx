@@ -2,14 +2,22 @@
 import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 
-export default function GalleryTemplate({ short_code }: { short_code: number }) {
+export default function GalleryTemplate({
+  short_code,
+}: {
+  short_code: number;
+}) {
   const [images, setImages] = useState<string[]>([]);
-  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
+  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>(
+    {}
+  );
 
   useEffect(() => {
-    fetch(`/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`)
-      .then(res => res.json())
-      .then(data => {
+    fetch(
+      `/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
         const allImages: string[] = [];
         if (data.images && Array.isArray(data.images)) {
           data.images.forEach((item: any) => {
@@ -27,17 +35,17 @@ export default function GalleryTemplate({ short_code }: { short_code: number }) 
     default: 4,
     1024: 3,
     768: 2,
-    480: 1
+    480: 2,
   };
 
   const handleImageLoad = (index: number) => {
-    setLoadedImages(prev => ({ ...prev, [index]: true }));
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
   };
 
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="flex gap-4 px-[50px]"
+      className="flex gap-4 p-4 md:px-[50px]"
       columnClassName="flex flex-col gap-4"
     >
       {images.map((url, i) => (
