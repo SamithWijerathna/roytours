@@ -1,17 +1,20 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { getDBConnection } from "../db";
-import { cookies } from 'next/headers'
 
 export async function POST(req: Request) {
   try {
-    const { action, username, email, password, emailOrUsername } = await req.json();
+    const { action, username, email, password, emailOrUsername } =
+      await req.json();
 
     const db = await getDBConnection();
 
     if (action === "register") {
       if (!username || !email || !password) {
-        return NextResponse.json({ error: "All fields are required" }, { status: 400 });
+        return NextResponse.json(
+          { error: "All fields are required" },
+          { status: 400 }
+        );
       }
 
       const [existing] = await db.query(
@@ -20,7 +23,10 @@ export async function POST(req: Request) {
       );
 
       if ((existing as any[]).length > 0) {
-        return NextResponse.json({ error: "Username or email already exists" }, { status: 400 });
+        return NextResponse.json(
+          { error: "Username or email already exists" },
+          { status: 400 }
+        );
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -30,60 +36,72 @@ export async function POST(req: Request) {
         [username, email, hashedPassword]
       );
 
-      return NextResponse.json({ message: "User registered successfully" }, { status: 201 });
+      return NextResponse.json(
+        { message: "User registered successfully" },
+        { status: 201 }
+      );
     }
 
     if (action === "login") {
-  if (!emailOrUsername || !password) {
-    return NextResponse.json(
-      { error: "Email/Username and password are required" },
-      { status: 400 }
-    );
-  }
+      if (!emailOrUsername || !password) {
+        return NextResponse.json(
+          { error: "Email/Username and password are required" },
+          { status: 400 }
+        );
+      }
 
-  const [rows] = await db.query(
-    "SELECT * FROM users WHERE user_email = ? OR user_name = ?",
-    [emailOrUsername, emailOrUsername]
-  );
+      const [rows] = await db.query(
+        "SELECT * FROM users WHERE user_email = ? OR user_name = ?",
+        [emailOrUsername, emailOrUsername]
+      );
 
-  const users = rows as any[];
-  if (users.length === 0) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
-  }
+      const users = rows as any[];
+      if (users.length === 0) {
+        return NextResponse.json(
+          { error: "Invalid credentials" },
+          { status: 401 }
+        );
+      }
 
-  const user = users[0];
-  const isPasswordValid = await bcrypt.compare(password, user.user_password);
+      const user = users[0];
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        user.user_password
+      );
 
-  if (!isPasswordValid) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
-  }
+      if (!isPasswordValid) {
+        return NextResponse.json(
+          { error: "Invalid credentials" },
+          { status: 401 }
+        );
+      }
 
+      const response = NextResponse.json({
+        message: "Login successful",
+        user: { id: user.id, username: user.user_name, email: user.user_email },
+      });
 
-  const response = NextResponse.json({
-    message: "Login successful",
-    user: { id: user.id, username: user.user_name, email: user.user_email },
-  });
+      response.cookies.set({
+        name: "userdata",
+        value: JSON.stringify({
+          id: user.id,
+          username: user.user_name,
+          email: user.user_email,
+        }),
+        httpOnly: true,
+        path: "/",
+        maxAge: 60 * 60 * 24,
+      });
 
-
-    response.cookies.set({
-    name: "userdata",
-    value: JSON.stringify({
-      id: user.id,
-      username: user.user_name,
-      email: user.user_email,
-    }),
-    httpOnly: true,
-    path: "/",
-    maxAge: 60 * 60 * 24, 
-  });
-
-  return response;
-}
-
+      return response;
+    }
 
     return NextResponse.json({ error: "Invalid action" }, { status: 400 });
   } catch (error) {
     console.error("Auth Error:", error);
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

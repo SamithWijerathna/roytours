@@ -4,12 +4,14 @@ import path from "path";
 import crypto from "crypto";
 import { getDBConnection } from "@/app/api/db";
 
-// ---------- GET: list templates + their widgets ----------
 export async function GET() {
-  const templatesDir = path.join(process.cwd(), "app/admin/components/widgets/templates");
+  const templatesDir = path.join(
+    process.cwd(),
+    "app/admin/components/widgets/templates"
+  );
 
   const entries = await fs.readdir(templatesDir, { withFileTypes: true });
-  const folders = entries.filter(e => e.isDirectory()).map(e => e.name);
+  const folders = entries.filter((e) => e.isDirectory()).map((e) => e.name);
 
   const templateData = await Promise.all(
     folders.map(async (folder) => {
@@ -31,22 +33,25 @@ export async function GET() {
         infoData = {};
       }
 
-      // Ensure permanent unique ID exists
       if (!infoData.id) {
         const newId = crypto.randomUUID();
         infoData.id = newId;
 
-        const infoLines = Object.entries(infoData).map(([k, v]) => `${k}="${v}"`);
+        const infoLines = Object.entries(infoData).map(
+          ([k, v]) => `${k}="${v}"`
+        );
         await fs.writeFile(infoPath, infoLines.join("\n"), "utf-8");
       }
-
-      // Load banner image as Base64
       let banner: string | null = null;
       try {
         const files = await fs.readdir(folderPath);
-        const bannerFile = files.find(f => /^banner\.(png|jpg|jpeg|webp|gif)$/i.test(f));
+        const bannerFile = files.find((f) =>
+          /^banner\.(png|jpg|jpeg|webp|gif)$/i.test(f)
+        );
         if (bannerFile) {
-          const fileBuffer = await fs.readFile(path.join(folderPath, bannerFile));
+          const fileBuffer = await fs.readFile(
+            path.join(folderPath, bannerFile)
+          );
           const ext = bannerFile.split(".").pop();
           banner = `data:image/${ext};base64,${fileBuffer.toString("base64")}`;
         }
@@ -61,34 +66,28 @@ export async function GET() {
         ver: infoData.ver || null,
         name: infoData.name || null,
         desc: infoData.desc || null,
-        banner
+        banner,
       };
     })
   );
 
-  // Fetch existing widgets from DB
   const db = await getDBConnection();
   const [widgets]: any = await db.execute(
     "SELECT widget_id, widget_uid, widget_name, short_code, active FROM widgets"
   );
-
-  // Group widgets by template id
   const widgetsByUid = widgets.reduce((acc: any, w: any) => {
     if (!acc[w.widget_uid]) acc[w.widget_uid] = [];
     acc[w.widget_uid].push(w);
     return acc;
   }, {});
 
-  const fullData = templateData.map(t => ({
+  const fullData = templateData.map((t) => ({
     ...t,
-    widgets: widgetsByUid[t.id] || []
+    widgets: widgetsByUid[t.id] || [],
   }));
 
   return NextResponse.json(fullData);
 }
-
-// ---------- POST: create new widget ----------
-
 
 export async function POST(req: Request) {
   try {
@@ -98,9 +97,10 @@ export async function POST(req: Request) {
     }
 
     const db = await getDBConnection();
-
-    // --- Find the template folder by reading info.thr ---
-    const templatesDir = path.join(process.cwd(), "app/admin/components/widgets/templates");
+    const templatesDir = path.join(
+      process.cwd(),
+      "app/admin/components/widgets/templates"
+    );
     const folders = await fs.readdir(templatesDir, { withFileTypes: true });
 
     let templateFolderPath: string | null = null;
@@ -135,11 +135,13 @@ export async function POST(req: Request) {
     }
 
     if (!templateFolderPath) {
-      return NextResponse.json({ error: "Template not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: "Template not found" },
+        { status: 404 }
+      );
     }
-
-    // --- Generate unique shortcode for main widgets table ---
-    const genCode = () => String((crypto as any).randomInt(0, 10000)).padStart(4, "0");
+    const genCode = () =>
+      String((crypto as any).randomInt(0, 10000)).padStart(4, "0");
     const MAX_ATTEMPTS = 20;
     let shortCode: string | null = null;
     for (let i = 0; i < MAX_ATTEMPTS; i++) {
@@ -165,34 +167,29 @@ export async function POST(req: Request) {
     const widget_id = result.insertId;
 
     if (infoData.database) {
-  const safeUid = String(template_id).replace(/-/g, "_");
-  // Ensure table creation is safe
-  const tableSQL = infoData.database
-    .replace("{uid}", safeUid)
-    .replace(/^CREATE TABLE/i, "CREATE TABLE IF NOT EXISTS");
+      const safeUid = String(template_id).replace(/-/g, "_");
+      const tableSQL = infoData.database
+        .replace("{uid}", safeUid)
+        .replace(/^CREATE TABLE/i, "CREATE TABLE IF NOT EXISTS");
 
-  try {
-    // 1️⃣ Create the widget-specific table only if it doesn't exist
-    await db.execute(tableSQL);
+      try {
+        await db.execute(tableSQL);
+        const insertSQL = `INSERT INTO widget_${safeUid} (w_id, short_code, created_at) VALUES (?, ?, NOW())`;
 
-    // 2️⃣ Insert widget_id and short_code into the widget-specific table
-    const widgetTable = safeUid; // same table name
-    const insertSQL = `INSERT INTO widget_${safeUid} (w_id, short_code, created_at) VALUES (?, ?, NOW())`;
-
-    await db.execute(insertSQL, [widget_id, shortCode]);
-  } catch (err: any) {
-    if (err.code === "ER_TABLE_EXISTS_ERROR") {
-      // Table already exists → just insert the record
-      const widgetTable = safeUid;
-      const insertSQL = `INSERT INTO widget_${safeUid} (w_id, short_code, created_at) VALUES (?, ?, NOW())`;
-      await db.execute(insertSQL, [widget_id, shortCode]);
-    } else {
-      console.error("Failed to create widget-specific table or insert record:", err);
+        await db.execute(insertSQL, [widget_id, shortCode]);
+      } catch (err: any) {
+        if (err.code === "ER_TABLE_EXISTS_ERROR") {
+          const widgetTable = safeUid;
+          const insertSQL = `INSERT INTO widget_${safeUid} (w_id, short_code, created_at) VALUES (?, ?, NOW())`;
+          await db.execute(insertSQL, [widget_id, shortCode]);
+        } else {
+          console.error(
+            "Failed to create widget-specific table or insert record:",
+            err
+          );
+        }
+      }
     }
-  }
-}
-
-
 
     return NextResponse.json({
       success: true,
@@ -204,4 +201,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
-

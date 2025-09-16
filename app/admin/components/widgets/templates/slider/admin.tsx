@@ -30,7 +30,6 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
       list = data.images[0].image_list;
     }
 
-    // Fill to 12 slots so your grid stays aligned
     setImages([...list, ...Array(12 - list.length).fill('')]);
   } catch (error) {
     console.error('Failed to load images:', error);
