@@ -44,6 +44,7 @@ export default function Experiences() {
             Train rides through emerald tea plantations, misty mountain hikes,
             and waterfalls.
           </p>
+          <Template templateName="slider" short_code="6751" />
         </div>
         <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center">
           <h2 className="text-3xl md:text-3xl font-semibold mb-2 lg:mb-2">
@@ -53,6 +54,7 @@ export default function Experiences() {
             Sun, sand, and sea in places like Galle, Mirissa, and Trincomalee.
           </p>
         </div>
+        <Template templateName="slider" short_code="7594" />
       </section>
       <section className="p-4 flex flex-col min-h-screen items-center justify-center py-10 ">
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">

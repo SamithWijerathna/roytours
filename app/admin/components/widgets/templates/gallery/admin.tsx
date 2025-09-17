@@ -31,10 +31,10 @@ export default function GalleryAdmin({ id }: GalleryAdminProps) {
     }
 
     // Fill to 12 slots so your grid stays aligned
-    setImages([...list, ...Array(12 - list.length).fill('')]);
+    setImages([...list, ...Array(24 - list.length).fill('')]);
   } catch (error) {
     console.error('Failed to load images:', error);
-    setImages(Array(12).fill(''));
+    setImages(Array(24).fill(''));
   }
 };
 
@@ -99,7 +99,7 @@ export default function GalleryAdmin({ id }: GalleryAdminProps) {
       <h2 className="text-2xl font-bold mb-6 text-center">Gallery Editor (ID: {id})</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 24 }).map((_, index) => (
           <div
             key={index}
             className="relative group border-2 border-dashed border-gray-300 rounded-lg p-2"

@@ -2,20 +2,12 @@
 import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 
-export default function GalleryTemplate({
-  short_code,
-}: {
-  short_code: number;
-}) {
+export default function GalleryTemplate({ short_code }: { short_code: number }) {
   const [images, setImages] = useState<string[]>([]);
-  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>(
-    {}
-  );
+  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
-    fetch(
-      `/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`
-    )
+    fetch(`/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`)
       .then((res) => res.json())
       .then((data) => {
         const allImages: string[] = [];
@@ -31,11 +23,13 @@ export default function GalleryTemplate({
       .catch(console.error);
   }, [short_code]);
 
+  const maxCols = Math.min(4, images.length || 1);
+
   const breakpointColumnsObj = {
-    default: 4,
-    1024: 3,
-    768: 2,
-    480: 2,
+    default: maxCols,
+    1024: Math.min(3, maxCols),
+    768: Math.min(2, maxCols),
+    480: Math.min(2, maxCols),
   };
 
   const handleImageLoad = (index: number) => {
