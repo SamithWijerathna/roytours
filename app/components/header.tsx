@@ -78,7 +78,7 @@ export default function Header() {
                   ? "font-bold text-black"
                   : "text-gray-700"
               } hover:text-gray-900`}
-              href="/experiences"
+              href="/Experiences"
             >
               Experiences
             </Link>
