@@ -10,33 +10,49 @@ interface GalleryTemplateProps {
 export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
   const pathname = usePathname();
   const [images, setImages] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const visibleCount = 3;
-  const [imageWidth, setImageWidth] = useState(505);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [imageWidth, setImageWidth] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch(
-      `/admin/components/widgets/templates/slider/callback?short_code=${short_code}`
-    )
+    setLoading(true);
+    fetch(`/admin/components/widgets/templates/slider/callback?short_code=${short_code}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log('API Response:', data); // Debug log
         const allImages: string[] = [];
-        if (data.images && Array.isArray(data.images)) {
+        if (Array.isArray(data.images)) {
           data.images.forEach((item: any) => {
-            if (item.image_list && Array.isArray(item.image_list)) {
+            // Parse the JSON string to get the actual array
+            if (typeof item.image_list === 'string') {
+              try {
+                const parsedImages = JSON.parse(item.image_list);
+                if (Array.isArray(parsedImages)) {
+                  allImages.push(...parsedImages);
+                }
+              } catch (error) {
+                console.error('Error parsing image_list:', error);
+              }
+            } else if (Array.isArray(item.image_list)) {
+              // Fallback in case it's already an array
               allImages.push(...item.image_list);
             }
           });
         }
+        console.log('Processed images:', allImages); // Debug log
         setImages(allImages);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      })
+      .finally(() => setLoading(false));
   }, [short_code]);
 
   useEffect(() => {
+    if (!images.length) return;
     function updateWidth() {
       if (imageRef.current) {
         setImageWidth(imageRef.current.offsetWidth);
@@ -47,26 +63,25 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
     return () => window.removeEventListener("resize", updateWidth);
   }, [images]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  const handlePrev = () => setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  const handleNext = () => setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
+  const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
+    const diff = touchStartX - e.changedTouches[0].clientX;
     if (diff > 50) handleNext();
-    else if (diff < -50) handlePrev(); 
+    else if (diff < -50) handlePrev();
     setTouchStartX(null);
   };
+
+  if (loading) {
+    return <div className="w-full text-center py-10">Loading...</div>;
+  }
+
+  if (!images.length) {
+    return <div className="w-full text-center py-10">No images found</div>;
+  }
 
   return (
     <div className="flex flex-col items-center mt-6 w-full">
@@ -91,40 +106,41 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
                 width={500}
                 height={300}
                 className="rounded-2xl object-cover"
+                onError={(e) => {
+                  console.error('Image failed to load:', img);
+                }}
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className={`flex justify-between w-full py-2 h-full mt-6`}>
-        <a
-          href="/Experiences"
-          className={`${pathname === "/"?"flex":"hidden"} relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer`}
-        >
-          <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
-            See More{" "}
-          </div>
-          <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
-            <svg
-              width="18"
-              height="17"
-              viewBox="0 0 18 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.70831 8.49998H16.2916M16.2916 8.49998L8.99998 1.20831M16.2916 8.49998L8.99998 15.7916"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-        </a>
-        <div className="flex gap-4">
+      {/* Buttons */}
+      <div className="flex justify-between w-full py-2 h-full mt-6">
+        {pathname === "/" && (
+          <a
+            href="/experiences"
+            className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer"
+          >
+            <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
+              See More
+            </div>
+            <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
+              {/* arrow */}
+              <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
+                <path
+                  d="M1.708 8.5h14.583M16.292 8.5L9 1.208M16.292 8.5L9 15.792"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+          </a>
+        )}
+       <div className="flex gap-4">
           <button
             onClick={handlePrev}
             className="hover:scale-105 transition-all "

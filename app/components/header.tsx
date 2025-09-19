@@ -122,7 +122,7 @@ export default function Header() {
         </ul>
 
         <Link
-          href="https://wa.me/94750439266"
+          href="https://wa.me/+94766528833"
           className="relative sm:flex hidden bg-transparent text-[#1e1e1e] border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer"
           onClick={() => setIsMobileMenuOpen(false)}
         >

@@ -13,7 +13,7 @@ export default function Gallery() {
         </p>
       </div>
       <section className="p-4 flex flex-col items-center text-center ">
-        <Template templateName="gallery" short_code="2691" />
+        <Template templateName="gallery" short_code="0327" />
         {/* 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4">
           <div className="grid gap-4">

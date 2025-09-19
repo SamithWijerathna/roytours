@@ -19,7 +19,7 @@ export default function Contact() {
           you.
         </p>
         <a
-          href="https://wa.me/94750439266"
+          href="https://wa.me/+94766528833"
           target="_blank"
           rel="noopener noreferrer"
         >

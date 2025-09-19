@@ -2,44 +2,59 @@
 import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 
-export default function GalleryTemplate({
-  short_code,
-}: {
-  short_code: number;
-}) {
+export default function GalleryTemplate({ short_code }: { short_code: number }) {
   const [images, setImages] = useState<string[]>([]);
-  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>(
-    {}
-  );
+  const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
-    fetch(
-      `/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`
-    )
+    fetch(`/admin/components/widgets/templates/gallery/callback?short_code=${short_code}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log('Gallery API Response:', data); // Debug log
         const allImages: string[] = [];
+        
         if (data.images && Array.isArray(data.images)) {
           data.images.forEach((item: any) => {
-            if (item.image_list && Array.isArray(item.image_list)) {
+            // Handle case where image_list is a JSON string
+            if (typeof item.image_list === 'string') {
+              try {
+                const parsedImages = JSON.parse(item.image_list);
+                if (Array.isArray(parsedImages)) {
+                  allImages.push(...parsedImages);
+                }
+              } catch (error) {
+                console.error('Error parsing image_list:', error);
+              }
+            } 
+            // Handle case where image_list is already an array (fallback)
+            else if (Array.isArray(item.image_list)) {
               allImages.push(...item.image_list);
             }
           });
         }
+        
+        console.log('Processed gallery images:', allImages); // Debug log
         setImages(allImages);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error('Gallery fetch error:', error);
+      });
   }, [short_code]);
 
+  const maxCols = Math.min(4, images.length || 1);
   const breakpointColumnsObj = {
-    default: 4,
-    1024: 3,
-    768: 2,
-    480: 2,
+    default: maxCols,
+    1024: Math.min(3, maxCols),
+    768: Math.min(2, maxCols),
+    480: Math.min(2, maxCols),
   };
 
   const handleImageLoad = (index: number) => {
     setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
+
+  const handleImageError = (index: number, url: string) => {
+    console.error(`Gallery image failed to load at index ${index}:`, url);
   };
 
   return (
@@ -60,6 +75,7 @@ export default function GalleryTemplate({
             className="w-full object-cover"
             loading="lazy"
             onLoad={() => handleImageLoad(i)}
+            onError={() => handleImageError(i, url)}
           />
         </div>
       ))}
