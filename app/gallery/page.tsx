@@ -141,7 +141,7 @@ export default function Gallery() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                />
+                /> add
               </svg>
             </div>
             <span className="absolute inset-0 rounded-full bg-black translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
