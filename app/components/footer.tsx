@@ -32,20 +32,20 @@ export default function footer() {
           <div className="w-1/2 text-lg py-20">
             <h4 className="font-semibold text-gray-400">Quick Links</h4>
             <ul className="flex text-nowrap flex-wrap gap-4">
-              <li>
+              <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/">Home</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/about">Our Story</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/Experiences">Experiences</Link>
               </li>
 
-              <li>
+              <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/gallery">Gallery</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/contact">Contact Us</Link>
               </li>
             </ul>

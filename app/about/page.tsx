@@ -75,7 +75,7 @@ export default function About() {
           We don’t just guide tours, we create connections that last a lifetime.
         </h1>
         <a
-          href="https://wa.me/94750439266"
+          href="https://wa.me/94766528833"
           target="_blank"
           rel="noopener noreferrer"
         >

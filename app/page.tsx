@@ -29,7 +29,7 @@ export default function Home() {
             </h1>
             <div className="lg:absolute flex flex-col items-center lg:flex-row lg:pr-8 lg:justify-between lg:w-full bottom-2 ">
               <a
-                href="https://wa.me/94750439266"
+                href="https://wa.me/94766528833"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -176,7 +176,7 @@ export default function Home() {
               Are you ready for your next adventure?
             </p>
             <a
-              href="https://wa.me/94750439266"
+              href="https://wa.me/94766528833"
               target="_blank"
               rel="noopener noreferrer"
             >
