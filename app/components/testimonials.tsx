@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -25,12 +26,32 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const x = useMotionValue(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const speed = 50; // pixels per second
+  const itemWidth = 344 * 4; // same as before (width of loop content)
+
   const allTestimonials = Array.from({ length: 6 }, (_, setIndex) =>
     testimonials.map((testimonial, index) => ({
       ...testimonial,
       key: `${setIndex}-${index}`,
     }))
   ).flat();
+
+  // Custom animation frame loop
+  useAnimationFrame((t, delta) => {
+    if (!isPaused) {
+      let moveBy = (delta / 1000) * speed; // pixels per frame
+      let newX = x.get() - moveBy;
+
+      // reset when fully scrolled
+      if (newX <= -itemWidth) {
+        newX = 0;
+      }
+      x.set(newX);
+    }
+  });
 
   return (
     <section className="p-4 md:px-[50px] flex flex-col items-center text-center">
@@ -44,23 +65,19 @@ export default function Testimonials() {
         Don't just take our word for it. <br /> Here's what fellow travelers
         have to say about their journeys through Sri Lanka:
       </p>
-      <div className="w-screen overflow-hidden py-5">
-        <motion.div
-          className="flex gap-6"
-          animate={{
-            x: [0, -(344 * 4)],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "loop",
-          }}
-        >
+      <div
+        className="w-screen overflow-hidden py-5 cursor-grab active:cursor-grabbing"
+        onMouseDown={() => setIsPaused(true)}
+        onMouseUp={() => setIsPaused(false)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
+        <motion.div className="flex gap-6" style={{ x }}>
           {allTestimonials.map((testimonial) => (
             <div
               key={testimonial.key}
-              className="w-80 min-w-[20rem] h-80 rounded-md shadow-md bg-white flex flex-col text-left p-4 shrink-0"
+              className="w-80 min-w-[20rem] h-80 rounded-md shadow-xl bg-white flex flex-col text-left p-4 shrink-0"
             >
               <div className="text-6xl">"</div>
               <p className="text-sm md:text-base flex-1">{testimonial.text}</p>

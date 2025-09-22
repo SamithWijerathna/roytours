@@ -39,11 +39,11 @@ export default function footer() {
                 <Link href="/about">Our Story</Link>
               </li>
               <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
-                <Link href="/Experiences">Experiences</Link>
+                <Link href="/destination">Destination</Link>
               </li>
 
               <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
-                <Link href="/gallery">Gallery</Link>
+                <Link href="/experience">Experience</Link>
               </li>
               <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/contact">Contact Us</Link>

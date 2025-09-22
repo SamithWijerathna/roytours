@@ -3,6 +3,7 @@ import Link from "next/link";
 import Testimonials from "./components/testimonials";
 import DeasinationSlider from "./components/desitination-slider";
 import Template from "@/app/admin/components/widgets/widget-render";
+import Countup from "./components/count";
 
 export default function Home() {
   return (
@@ -68,7 +69,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative md:min-h-screen flex p-4 lg:px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
+      <section className="relative md:min-h-screen flex lg:px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
             src="/image/roy.png"
@@ -119,23 +120,14 @@ export default function Home() {
                 <span className="absolute rounded-full inset-0 bg-[#1e1e1e] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               </button>
             </Link>
-            <div className="mt-12 mb-8 flex flex-row gap-8">
-              <div>
-                <p className="text-7xl font-bold">10+</p>
-                <p className="text-base md:text-lg">Years of experience</p>
-              </div>
-              <div>
-                <p className="text-7xl font-semibold">100+</p>
-                <p className="text-base md:text-lg">Happy Explorers</p>
-              </div>
-            </div>
+           <Countup/>
           </div>
         </div>
 
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
 
-      <section className="lg:px-[50px] p-4 flex flex-col gap-2.5 lg:min-h-screen items-center lg:items-start lg:text-left text-center">
+      <section className="lg:px-[50px] p-4 flex flex-col gap-2.5 lg:h-full items-center lg:items-start lg:text-left text-center">
         <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base ">
           {" "}
           Experiences{" "}

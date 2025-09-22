@@ -16,29 +16,33 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
     loadImages();
   }, [id]);
 
- const loadImages = async () => {
-  try {
-    const res = await fetch(`/admin/components/widgets/templates/slider/callback?short_code=${id}`);
-    const data = await res.json();
+  const loadImages = async () => {
+    try {
+      const res = await fetch(
+        `/admin/components/widgets/templates/slider/callback?short_code=${id}`
+      );
+      const data = await res.json();
 
-    let list: string[] = [];
-    if (
-      Array.isArray(data.images) &&
-      data.images[0] &&
-      Array.isArray(data.images[0].image_list)
-    ) {
-      list = data.images[0].image_list;
+      let list: string[] = [];
+      if (
+        Array.isArray(data.images) &&
+        data.images[0] &&
+        Array.isArray(data.images[0].image_list)
+      ) {
+        list = data.images[0].image_list;
+      }
+
+      setImages([...list, ...Array(12 - list.length).fill("")]);
+    } catch (error) {
+      console.error("Failed to load images:", error);
+      setImages(Array(12).fill(""));
     }
+  };
 
-    setImages([...list, ...Array(12 - list.length).fill('')]);
-  } catch (error) {
-    console.error('Failed to load images:', error);
-    setImages(Array(12).fill(''));
-  }
-};
-
-
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleFileSelect = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const file = e.target.files?.[0];
     if (file) {
       setSelectedFile(file);
@@ -56,10 +60,13 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
       formData.append("index", index.toString());
       formData.append("short_code", id.toString());
 
-      const res = await fetch("/admin/components/widgets/templates/slider/callback", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "/admin/components/widgets/templates/slider/callback",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         await loadImages();
@@ -80,10 +87,13 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
       formData.append("short_code", id.toString());
       formData.append("remove", "true");
 
-      const res = await fetch("/admin/components/widgets/templates/slider/callback", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "/admin/components/widgets/templates/slider/callback",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         await loadImages();
@@ -95,7 +105,9 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 text-center">Gallery Editor (ID: {id})</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">
+        Gallery Editor (ID: {id})
+      </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {Array.from({ length: 12 }).map((_, index) => (
@@ -103,7 +115,6 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
             key={index}
             className="relative group border-2 border-dashed border-gray-300 rounded-lg p-2"
           >
-            {/* Image Box */}
             <div className="aspect-square bg-gray-100 rounded-md overflow-hidden mb-2">
               {images[index] ? (
                 <img
@@ -117,8 +128,6 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
                 </div>
               )}
             </div>
-
-            {/* Buttons */}
             <div className="flex flex-col gap-2">
               <label className="cursor-pointer bg-blue-500 text-white text-xs px-2 py-1 rounded text-center hover:bg-blue-600">
                 Choose File
@@ -139,8 +148,6 @@ export default function GalleryAdmin({ id }: SliderAdminProps) {
                 </button>
               )}
             </div>
-
-            {/* Upload Confirmation */}
             {editingIndex === index && selectedFile && (
               <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center p-2 rounded-lg">
                 <div className="bg-white p-3 rounded-md text-center">

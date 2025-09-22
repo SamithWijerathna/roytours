@@ -74,37 +74,26 @@ export default function Header() {
           <li>
             <Link
               className={`${
-                pathname === "/Experiences"
+                pathname === "/destination"
                   ? "font-bold text-black"
                   : "text-gray-700"
               } hover:text-gray-900`}
-              href="/Experiences"
+              href="/destination"
             >
-              Experiences
+              Destination
             </Link>
           </li>
-          <li className="hidden">
-            <Link
-              className={`${
-                pathname === "/destinations"
-                  ? "font-bold text-black"
-                  : "text-gray-700"
-              } hover:text-gray-900`}
-              href="/destinations"
-            >
-              Destinations
-            </Link>
-          </li>
+          
           <li>
             <Link
               className={`${
-                pathname === "/gallery"
+                pathname === "/experience"
                   ? "font-bold text-black"
                   : "text-gray-700"
               } hover:text-gray-900`}
-              href="/gallery"
+              href="/experience"
             >
-              Gallery
+              Experience
             </Link>
           </li>
           <li>
@@ -227,28 +216,28 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/Experiences"
+                    href="/destination"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={
-                      pathname === "/Experiences"
+                      pathname === "/destination"
                         ? "font-bold text-black"
                         : "text-gray-700"
                     }
                   >
-                    Experiences
+                    Destination
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/gallery"
+                    href="/experience"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={
-                      pathname === "/gallery"
+                      pathname === "/experience"
                         ? "font-bold text-black"
                         : "text-gray-700"
                     }
                   >
-                    Gallery
+                   Experience
                   </Link>
                 </li>
                 <li>
