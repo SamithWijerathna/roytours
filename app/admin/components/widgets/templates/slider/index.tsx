@@ -110,11 +110,11 @@ export default function GalleryCarousel({ short_code }: GalleryTemplateProps) {
       <div className="flex justify-between w-full py-2 h-full mt-6">
         {pathname === "/" && (
           <a
-            href="/experience"
+            href="/experience" 
             className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer"
           >
             <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
-              See More
+              See More <span className="sr-only">Sri Lanka travel experiences</span>
             </div>
             <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
               <svg width="18" height="17" viewBox="0 0 18 17" fill="none">

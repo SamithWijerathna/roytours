@@ -34,7 +34,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="relative bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+                <button aria-label="Start Your Adventure" className="relative bg-transparent justify-center text-[#ffffff] border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center gap-2 font-semibold md:text-xl group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
                   <div className="pl-4 py-2 relative z-10 group-hover:text-black transition-colors duration-300">
                     Start Your Adventure{" "}
                   </div>
@@ -95,10 +95,10 @@ export default function Home() {
               hills of the highlands to the golden southern shores, we've guided
               travelers through stories of heritage, beauty, and discovery.
             </p>
-            <Link href="/about">
-              <button className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+            <Link href="/about" >
+              <button aria-label="Read More" className="relative bg-transparent border-2 border-[#1e1e1e] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
                 <div className="pl-4 py-2 relative z-10 group-hover:text-white transition-colors duration-300">
-                  Read More
+                  Read More<span className="sr-only"> about Roy Tours Sri Lanka</span>
                 </div>
                 <div className="w-full z-10 h-full p-4 items-center justify-center rounded-full group-hover:scale-105 bg-[#1e1e1e]">
                   <svg
@@ -172,7 +172,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
+              <button aria-label="Lets go" className="relative bg-transparent border-2 border-[#ffffff] rounded-full p-1 w-auto text-nowrap flex items-center mt-6 gap-2 font-semibold group overflow-hidden active:scale-90 transition duration-300 ease-in-out cursor-pointer">
                 <div className="pl-4 py-2 text-white relative z-10 group-hover:text-[#1e1e1e] transition-colors duration-300">
                   Let's Go
                 </div>

@@ -1,4 +1,4 @@
-import Header from "../components/header";
+import Countup from "../components/count";
 
 export default function About() {
   return (
@@ -29,20 +29,10 @@ export default function About() {
               itineraries — they are heartfelt experiences crafted with care.
             </p>
 
-            <div className="mt-12 mb-8 flex flex-row gap-8">
-              <div>
-                <p className="text-7xl font-bold">10+</p>
-                <p className="text-base md:text-lg">Years of experience</p>
-              </div>
-              <div>
-                <p className="text-7xl font-semibold">100+</p>
-                <p className="text-base md:text-lg">Happy Explorers</p>
-              </div>
-            </div>
+            <Countup/>
           </div>
         </div>
 
-        {/* Overlay with opacity and gradient */}
         <div className="absolute inset-0 bg-white/50 bg-linear-to-b from-white to-transparent " />
       </section>
       <section className="p-4 lg:min-h-screen flex flex-col lg:items-center lg:justify-center gap-4 lg:px-[50px]">

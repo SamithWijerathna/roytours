@@ -30,7 +30,7 @@ export default function footer() {
           </div>
 
           <div className="w-1/2 text-lg py-20">
-            <h4 className="font-semibold text-gray-400">Quick Links</h4>
+            <span className="font-semibold text-gray-400">Quick Links</span>
             <ul className="flex text-nowrap flex-wrap gap-4">
               <li className="hover:text-gray-400 active:scale-90 transition-all duration-100 ease-in-out cursor-pointer">
                 <Link href="/">Home</Link>
@@ -77,7 +77,7 @@ export default function footer() {
           you.
         </p>
         <div className="flex flex-col text-center items-center gap-2">
-          <h4 className="font-bold">Quick Links</h4>
+          <span className="font-bold">Quick Links</span>
           <ul className="flex flex-col gap-2 ">
             <li>
               <Link href="/">Home</Link>
