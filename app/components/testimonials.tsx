@@ -23,6 +23,16 @@ const testimonials = [
     name: "Lucas",
     country: "Germany",
   },
+  {
+    text:"Roy is a laid back guy who accepts your decision and doesn't just run with you from one point to the other. By the way, there was also information about land and people. We individually planned and had a great day. Next time again with Roy",
+    name:"Ursula Lischke",
+    country: "Germany",
+  },
+  {
+    text:"we used the mini bus driver located outside of the guesthouse Roy Kumare Tours and can recommend him for any requests you have, he drove us to Mirissa which is a long journey, his driving was calm and we felt safe.",
+    name:"Wendy",
+    country: "UK",
+  }
 ];
 
 export default function Testimonials() {

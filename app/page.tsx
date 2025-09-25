@@ -72,7 +72,7 @@ export default function Home() {
       <section className="relative md:min-h-screen flex lg:px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
-            src="/image/roy.png"
+            src="/image/roy.webp"
             alt="Mr Roy Kumara"
             className="hidden lg:block h-3/4 px-4 pr-10"
           />

@@ -41,9 +41,9 @@ export default function About() {
             Our Mission
           </h2>
           <p className="lg:inline-block lg:w-lg text-base md:text-lg lg:justify-center">
-            With over a decade of experience, we’ve dedicated ourselves to
+            With over a decade of experience, we've dedicated ourselves to
             crafting unforgettable journeys across Sri Lanka. From the misty
-            hills of the highlands to the golden southern shores, we’ve guided
+            hills of the highlands to the golden southern shores, we've guided
             travelers through stories of heritage, beauty,
           </p>
         </div>
@@ -52,17 +52,14 @@ export default function About() {
             Our Vision
           </h2>
           <p className="lg:inline-block lg:w-lg text-base md:text-lg lg:justify-center">
-            With over a decade of experience, we’ve dedicated ourselves to
-            crafting unforgettable journeys across Sri Lanka. From the misty
-            hills of the highlands to the golden southern shores, we’ve guided
-            travelers through stories of heritage, beauty,
+           To become Sri Lanka's most trusted and inspiring travel companion recognized globally for transforming journeys into meaningful experiences and for celebrating the island's culture, nature, and timeless charm with every adventure we craft.
           </p>
         </div>
       </section>
 
       <section className="flex flex-col min-h-screen items-center justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-center lg:inline-block lg:w-1/2">
-          We don’t just guide tours, we create connections that last a lifetime.
+          We don't just guide tours, we create connections that last a lifetime.
         </h1>
         <a
           href="https://wa.me/94766528833"
