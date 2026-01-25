@@ -83,6 +83,18 @@ export default function Header() {
               Destination
             </Link>
           </li>
+           <li>
+            <Link
+              className={`${
+                pathname === "/price"
+                  ? "font-bold text-black"
+                  : "text-gray-700"
+              } hover:text-gray-900`}
+              href="/price"
+            >
+              Prices
+            </Link>
+          </li>
           
           <li>
             <Link
