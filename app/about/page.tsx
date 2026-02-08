@@ -8,7 +8,7 @@ export default function About() {
           <img
             src="/image/roy.png"
             alt="Mr Roy Kumara"
-            className="hidden lg:block h-3/4 pr-10 "
+            className="hidden lg:block w-3/4 pr-10 "
           />
           <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center h-full">
             <h1 className="text-4xl md:text-5xl font-semibold mb-6 lg:mb-2">

@@ -72,9 +72,9 @@ export default function Home() {
       <section className="relative md:min-h-screen flex lg:px-10 w-full bg-[url(/image/bg2.png)] bg-cover bg-bottom bg-no-repeat">
         <div className="z-10 flex w-full justify-between items-end">
           <img
-            src="/image/roy.webp"
+            src="/image/roy.png"
             alt="Mr Roy Kumara"
-            className="hidden lg:block h-3/4 px-4 pr-10"
+            className="hidden lg:block w-3/4 px-4 pr-10"
           />
           <div className="flex flex-col items-center lg:items-start lg:text-left text-center justify-center h-full">
             <div className="px-4 py-2 border-1 border-[1e1e1e] w-fit h-fit rounded-full text-sm md:text-base mb-2">
